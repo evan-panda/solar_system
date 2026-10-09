@@ -4,5 +4,6 @@ services:
     image: cartoon-solar-system:latest
     container_name: solar-system
     ports:
-      - "2020:80"
+      # Host port comes from HOST_PORT in .env (defaults to 8080 if unset).
+      - "${HOST_PORT:-8080}:8080"
     restart: unless-stopped

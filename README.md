@@ -35,8 +35,10 @@ npm run dev        # http://localhost:5173 (also on your LAN for phone testing)
 
 ## Deploy with Docker
 ```bash
-docker compose up -d --build      # serves on http://<server>:8080
+cp .env.example .env              # then set HOST_PORT to a free port on your server
+docker compose up -d --build      # serves on http://<server>:<HOST_PORT>
 ```
+`HOST_PORT` defaults to 8080 if `.env` is missing. The container always listens on 8080 internally.
 Or without compose:
 ```bash
 docker build -t cartoon-solar-system .
