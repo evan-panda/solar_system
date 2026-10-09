@@ -1,0 +1,8 @@
+services:
+  solar-system:
+    build: .
+    image: cartoon-solar-system:latest
+    container_name: solar-system
+    ports:
+      - "2020:80"
+    restart: unless-stopped

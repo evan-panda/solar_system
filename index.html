@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#05060f" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Cartoon Solar System</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='22' fill='%23ffb300'/><ellipse cx='50' cy='50' rx='46' ry='14' fill='none' stroke='%23ecd39a' stroke-width='6'/></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <header id="top">
+      <div id="titleBlock">
+        <h1>Solar System</h1>
+        <div id="date"></div>
+      </div>
+      <button id="backBtn" class="btn hidden">← Solar System</button>
+      <div id="toggles">
+        <button id="labelsBtn" class="btn small toggle">Labels</button>
+        <button id="orbitsBtn" class="btn small toggle">Orbits</button>
+      </div>
+    </header>
+
+    <aside id="info" class="panel hidden">
+      <button id="infoToggle" class="collapse" aria-label="Show or hide details"></button>
+      <h2 id="infoName"></h2>
+      <div class="info-body">
+        <p id="infoBlurb"></p>
+        <dl id="infoStats"></dl>
+        <div class="spinrow">
+          <span>Spin speed</span>
+          <div class="seg">
+            <button data-spin="1">1×</button><button data-spin="10">10×</button><button data-spin="100">100×</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <footer id="bottom">
+      <div id="controls" class="panel">
+        <button id="playBtn" class="btn icon">⏸</button>
+        <label id="speedWrap">
+          <input id="speed" type="range" min="-1" max="1.7" step="0.01" value="0" aria-label="Simulation speed" />
+          <span id="speedLabel"></span>
+        </label>
+        <div id="alignGroup">
+          <button id="alignUp" class="btn" title="Line the planets up above the Sun">Align ↑</button>
+          <button id="alignDown" class="btn" title="Line the planets up below the Sun">Align ↓</button>
+          <button id="nowBtn" class="btn" title="Return to today's real positions">Now</button>
+        </div>
+      </div>
+      <nav id="chips"></nav>
+    </footer>
+
+    <div id="hint">Drag to rotate · Scroll or pinch to zoom · Tap a planet to visit it</div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
