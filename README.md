@@ -2,6 +2,8 @@
 
 An interactive Three.js model of the solar system with cartoon-style planets. It works with a mouse or a touchscreen.
 
+![Overview of the cartoon solar system with orbits, labels and the speed controls](docs/screenshot.png)
+
 ## Features
 
 - **Real orbits.** Each orbit uses JPL's J2000 orbital elements: real eccentricity, inclination and perihelion direction. The positions are solved with Kepler's equation, so planets speed up near the Sun. On load, every body is placed where it actually is today.
