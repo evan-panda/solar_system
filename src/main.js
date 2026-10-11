@@ -974,7 +974,7 @@ function pick(x, y, slop) {
 // ------------------------------------------------------------------ UI
 const $ = (id) => document.getElementById(id);
 const ui = {
-  date: $('date'), back: $('backBtn'), title: $('titleBlock'), play: $('playBtn'),
+  date: $('date'), back: $('backBtn'), title: $('title'), play: $('playBtn'),
   speed: $('speed'), speedLabel: $('speedLabel'), alignGroup: $('alignGroup'),
   info: $('info'), infoName: $('infoName'), infoBlurb: $('infoBlurb'), infoStats: $('infoStats'),
   chips: $('chips'), labels: $('labelsBtn'), orbits: $('orbitsBtn'), hint: $('hint'), infoToggle: $('infoToggle'),
@@ -1006,7 +1006,7 @@ function syncUI() {
   const focus = mode === 'focus';
   document.body.classList.toggle('focus', focus);
   ui.back.classList.toggle('hidden', !focus);
-  ui.title.classList.toggle('hidden', focus);
+  ui.title.classList.toggle('hidden', focus); // the date stays, under the back button
   ui.info.classList.toggle('hidden', !focus);
   ui.labels.classList.toggle('on', state.labels);
   ui.orbits.classList.toggle('on', state.orbits);
