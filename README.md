@@ -10,6 +10,7 @@ An interactive Three.js model of the solar system with cartoon-style planets. It
 
 - **Real orbits.** Each orbit uses JPL's J2000 orbital elements: real eccentricity, inclination and perihelion direction. The positions are solved with Kepler's equation, so planets speed up near the Sun. On load, every body is placed where it actually is today.
 - **Relative speeds.** Periods follow Kepler's third law. At 1× speed, Earth takes 60 s per orbit, Mercury about 14 s, and Neptune about 2.7 hours. The slider runs from 0.1× to 50×.
+- **Date picker.** Click the date under the title to jump to any day from 1800 to 2300. Jumping forward fast-forwards time, so rockets keep flying, launching and landing on schedule. Jumping backward glides the planets to their positions on that date.
 - **Align ↑ / Align ↓** moves every planet (and Pluto) forward along its own orbit until they form a straight line above or below the Sun. **Now** puts them back at today's real positions.
 - **Cartoon planets** with their best-known features:
   - Mercury's craters
@@ -21,6 +22,11 @@ An interactive Three.js model of the solar system with cartoon-style planets. It
   - Uranus tipped on its side with vertical rings
   - Neptune's Great Dark Spot and Triton
   - Pluto's heart, plus Charon
+- **Rockets.** Open **🚀 Rockets**, pick a start and a destination planet, and optionally name the rocket (it defaults to "Rocket 1", "Rocket 2", …).
+  - Each rocket coasts on a real two-body orbit around the Sun, found by solving Lambert's problem so that it meets the target planet when it arrives. Of all trips that leave right away and take 0.5× to 1.6× the Hohmann transfer time, it picks the one that needs the least Δv. Earth to Mars takes about 8–10 months, which is 40–50 s at 1×.
+  - **Launch now** leaves immediately on the cheapest trip for today. The panel also shows the best launch window in the next synodic period: the date when the same fuel (or less) gets the rocket there fastest. **Wait for window** keeps the rocket on the planet until then, and **Jump & launch** skips ahead to that date and launches.
+  - With **Orbits** on, each rocket draws its path: solid where it has been and dashed where it is going.
+  - Tap a rocket, its label or its entry in the list to follow it. After an **Align** or **Now** jump, rockets in flight make a mid-course correction toward the target's new position.
 - **Other objects:** the asteroid belt (with Kirkwood gaps), the Kuiper belt, and Halley's Comet on its retrograde orbit, with a tail that grows near the Sun and points away from it.
 - **Controls:**
   - Drag to rotate.

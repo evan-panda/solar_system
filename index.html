@@ -18,7 +18,8 @@
     <header id="top">
       <div id="titleBlock">
         <h1>Solar System</h1>
-        <div id="date"></div>
+        <button id="dateBtn" class="date-btn" title="Jump to a date"><span id="date"></span><span aria-hidden="true">📅</span></button>
+        <input id="datePick" type="date" min="1800-01-01" max="2300-12-31" tabindex="-1" aria-hidden="true" />
       </div>
       <button id="backBtn" class="btn hidden">← Solar System</button>
       <div id="toggles">
@@ -54,9 +55,31 @@
           <button id="alignDown" class="btn" title="Line the planets up below the Sun">Align ↓</button>
           <button id="nowBtn" class="btn" title="Return to today's real positions">Now</button>
         </div>
+        <button id="rocketsBtn" class="btn" title="Send a rocket to another planet">🚀 Rockets</button>
       </div>
       <nav id="chips"></nav>
     </footer>
+
+    <aside id="rockets" class="panel hidden">
+      <button id="rocketsClose" class="collapse close" aria-label="Close"></button>
+      <h2>🚀 Rockets</h2>
+      <form id="launchForm">
+        <div class="rk-row">
+          <label>From<select id="rkFrom"></select></label>
+          <label>To<select id="rkTo"></select></label>
+        </div>
+        <label>Name<input id="rkName" maxlength="24" autocomplete="off" spellcheck="false" /></label>
+        <div id="rkEstimate"></div>
+        <div class="rk-actions">
+          <button id="rkNow" type="submit" class="btn primary">Launch now</button>
+          <button id="rkWait" type="button" class="btn" title="Keep the rocket on the planet until the window">Wait for window</button>
+          <button id="rkJump" type="button" class="btn" title="Skip ahead to the window and launch">Jump &amp; launch</button>
+        </div>
+      </form>
+      <ul id="flights"></ul>
+    </aside>
+
+    <div id="toast"></div>
 
     <div id="hint">Drag to rotate · Scroll or pinch to zoom · Tap a planet to visit it</div>
 
